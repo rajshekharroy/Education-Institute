@@ -13,7 +13,7 @@
 
 .header {
     min-height: 100vh;
-    width: 100vw;
+    width: fit-content;
     background-color: #ede5f2;
     background-image: linear-gradient(24deg, #ede5f2 0%, #ffecdb 50%, #f0e9f1 100%);
     padding-bottom: 50px;
@@ -229,10 +229,12 @@
 
 .about-container {
     display: flex;
+    width: 100vw;
     justify-content: center;
     gap: 8%;
     padding: 100px;
     font-family: "Nunito Sans", sans-serif;
+    overflow: hidden;
 }
 
 .about-us h4 {
@@ -295,7 +297,7 @@
 }
 
 
-/* course container  */
+/* third sec  */
 
 .course-div {
     align-items: center;
@@ -307,6 +309,7 @@
     flex-direction: column;
     justify-content: center;
     gap: 55px;
+    overflow: hidden;
 }
 
 .course-container {
@@ -392,11 +395,12 @@
     bottom: -70px;
 }
 
-/* popular course  */
+/* fourth sec  */
 
 
 .popular-course-div {
     width: 100vw;
+    height: fit-content;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -404,6 +408,7 @@
     justify-content: center;
     align-items: center;
     padding: 100px 20px;
+    overflow: hidden;
 }
 
 .popular-course {
@@ -438,12 +443,13 @@
 
 .cca img, .com img, .dom img {
     transition: 0.3s ease-in-out;
+    width: 100%;
+    object-fit: cover;
 }
 .cca .course-img-div,.com .course-img-div,.dom .course-img-div {
-    width: 100%;
-    height: fit-content;
     overflow: hidden;
     border-radius: 5px;
+
 }
 
 .cca:hover img, .com:hover img, .dom:hover img {
@@ -529,6 +535,7 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    overflow: hidden;
 }
 
 .testimonial-con {
@@ -574,6 +581,7 @@
     display: flex;
     text-align: center;
     justify-content: center;
+    overflow: hidden;
   }
   .motivation-con {
     width: fit-content;
@@ -618,6 +626,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
   }
 
   .why-choose-us-con {
@@ -753,8 +762,11 @@
     bottom: 20px;
   }
 
+
+
+
   .blog-div {
-    width: 100vw;
+    width: fit-content;
     background-color: #ede5f2;
     background-image: linear-gradient(24deg, #ede5f2 0%, #ffecdb 50%, #f0e9f1 100%);
     display: flex;
@@ -762,7 +774,6 @@
     align-items: center;
     justify-content: center;
     padding: 100px 0;
-    overflow: hidden;
   }
 
   .blog-con {
@@ -812,6 +823,7 @@
 
   .blog img {
     transition: 0.3s ease-in-out;
+    width: 100%;
   }
 
   .blog:hover img {
@@ -888,9 +900,17 @@
 
   .footer {
     background-color: #231E3F;
-    width: 100vw;
+    width: fit-content;
     height: fit-content;
     position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    padding: 50px;
+    gap: 50px;
+    overflow: hidden;
   }
 
  .footer::before {
@@ -898,17 +918,49 @@
     position: absolute;
     background-image: url('./footer.png');
     background-size: 120px 120px;
-    opacity: 0.1;
+    opacity: 0.07;
     height: 100%;
     width: 100%;
  }
 
  .footer-content {
-    padding: 50px;
+    width: 65%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 50px;
+ }
+
+ .footer-content h2 {
+    font-size: max(1.3vw,20px);
+    font-weight: bolder;
+ }
+
+ .footer-content li {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    align-items: center;
+ }
+
+ .first,.second,.third,.fourth {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
  }
 
  .first img {
     width: 13vw;
+ }
+ .first p {
+    font-size: max(0.9vw,14px);
+ }
+
+ .social-icons i {
+    background-color: rgba(255, 255, 255, 0.123);
+    padding: max(0.5vw,15px);
+    border-radius: 5px;
+    margin-left: 9px;
+    font-size: max(1.2vw, 16px);
  }
 
 @media (max-width:1600px) {
