@@ -75,6 +75,8 @@
     justify-content: baseline;
     }
 
+    
+
 .homepage-container .left {
     display: flex;
     flex-direction: column;
@@ -86,11 +88,53 @@
 }
 
 .homepage-container .left-content {
-    width: 62%;
+    width: 65%;
     padding: 0 20px;
     min-width: 450px;
-   
 }
+
+@media (max-width: 1600px){
+  .homepage-container .left-content {
+    width: 90%;
+  }
+}
+@media (max-width: 1200px){
+  .homepage-container {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+  }
+  .homepage-container .right {
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+
+  .right-content .course {
+    min-width: 40vw; 
+  }
+  .right-content .login {
+    min-width: 40vw; 
+  }
+}
+
+@media (max-width:550px){
+  .homepage-container .right {
+    flex-direction: column;
+  }
+  .right-content .course {
+    min-width: 90vw; 
+  }
+
+  .homepage-container .left-content {
+    width: 90%;
+    padding: 0 20px;
+    justify-content: center;
+    min-width: 200px;
+}
+}
+
 
 
 .left-content h4 {
@@ -131,16 +175,6 @@
   bottom: 10%;
 }
 
-.homepage-container .right {
-    display: flex;
-    gap: 20px;
-    position: relative;
-
-    padding: 50px;
-    z-index: 1;
-    align-self: self-end;
-}
-
 .whatsapp {
   object-fit: contain;
   width: 40%;
@@ -165,6 +199,14 @@
   bottom: 0;
 }
 
+.homepage-container .right {
+  display: flex;
+  gap: 20px;
+  position: relative;
+  padding: 50px;
+  z-index: 1;
+  align-self: self-end;
+}
 
 .right .right-content {
     display: flex;
@@ -177,14 +219,14 @@
 
 .right-content .course {
     height: fit-content;
-    width: 269px;
+    width: max(14vw,240px);
     background-color: white;
     border-radius: 5px;
     border: 15px solid white;
 }
 
 .course .image-con {
-    height: 47.5%;
+    height: fit-content;
     width: 100%;
     overflow: hidden;
     border-radius: 3px;
@@ -192,9 +234,9 @@
 }
 
 .image-con img {
-    object-fit: cover;
     width: 100%;
     height: 100%;
+    display: block;
     transition: 0.5s ease;
     cursor: pointer;
 }
@@ -205,7 +247,7 @@
 
 .course p, .login p {
     margin: 22px auto;
-    font-size: 17px;
+    font-size: max(0.9vw,15px);
     font-family: "Cabin", sans-serif;
     font-weight: bolder;
     letter-spacing: 1px;
@@ -222,7 +264,7 @@
     display: flex;
     gap: 12px;
     font-family: "Cabin", sans-serif;
-    font-size: 14.5px;
+    font-size: max(0.75vw,12px);
     transition: 0.5s ease;
     cursor: pointer;
 }
@@ -236,11 +278,11 @@
 }
 
 .right-content .login {
-    height: 190px;
-    width: 190px;
+    height: max(9.8vw,fit-content);
+    width: max(9.8vw,150px);
     background-color: white;
     border-radius: 5px;
-    padding: 20px;
+    padding: 15px;
 }
 
 
@@ -274,12 +316,14 @@
 .pictures {
     width: fit-content;
     position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     padding: 100px;
 }
 
 .pictures #first {
   width: 100%;
-  min-width: 300px;
 }
 
 .pictures #second {
@@ -310,6 +354,7 @@
   width: fit-content;
   position: relative;
 }
+
 
 .about-us h4 {
   color: rgb(82,95,225);
@@ -348,6 +393,55 @@
   animation: running-anim 10s linear infinite;
 }
 
+@media (max-width:1200px){
+  .about-us {
+    padding: 100px;
+  }
+}
+@media (max-width:1000px){
+  .about-container {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .pictures {
+    width: 70%;
+  }
+  .pictures #second {
+    width: 30%;
+  }
+  .about-us {
+    width: 70%;
+    padding: 0;
+  }
+  .about-us p {
+    width: 100%;
+    display: inline;
+  }
+  #shape15 {
+    display: none;
+  }
+}
+@media (max-width:600px){
+
+  .about-us,.pictures {
+    width: 90%;
+  }
+  .pictures #second, .pictures #third, .pictures #shape10 {
+    display: none;
+  }
+  .pictures {
+    padding: 70px 20px;
+  }
+  .pictures #first {
+    width: 100%;
+  }
+  .about-us button {
+    font-size: 14px;
+    padding: 15px 25px;
+  }
+}
+
 
 
 /* third section course  */
@@ -363,14 +457,14 @@
     justify-content: center;
     gap: 55px;
     overflow: hidden;
-
+    padding: 100px 50px;
 }
 
 .course-container {
     display: flex;
     justify-content: center;
     position: relative;
-    gap: 7vw;
+    gap: max(7vw,50px);
     min-height: fit-content;
     width: fit-content;
 }
@@ -383,7 +477,6 @@
     background-color: #fff;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     align-items: center;
     transition: 0.3s ease-in-out;
 }
@@ -415,7 +508,12 @@
 }
 
 .course-container h3 {
-    padding-bottom: 50px;
+    width: 100%;
+    height: 100%;
+    min-height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .course-container img {
@@ -449,6 +547,26 @@
     bottom: -70px;
 }
 
+@media (max-width:1100px) {
+  .course-container {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width:690px){
+  .course-div{
+    padding: 100px 20px;
+  }
+  .course1, .course2, .course3 {
+    height: fit-content;
+    width: 100%;
+  }
+  .course-container img {
+    object-fit: contain;
+  }
+}
+
+
 /*  fourth section popular course   */
 
 
@@ -468,13 +586,13 @@
 .popular-course-container {
     display: flex;
     margin-top: 20px;
-    gap: 1.5vw;
+    gap: max(1.5vw,20px);
+    justify-content: center;
+    align-items: center;
     width: fit-content;
     position: relative;
     z-index: 1;
 }
-
-
 .popular-course-div h1 {
     font-size: max(2.7rem,20px);
     font-weight: bolder;
@@ -548,12 +666,14 @@
     border-radius: 5px;
     margin-right: 20px;
     cursor: default;
+    font-size: max(0.8vw,13px);
 }
 .mrp {
     text-decoration: line-through;
     color: rgb(142,139,155);
     font-weight: 400;
     cursor: default;
+    font-size: max(0.8vw,13px);
 }
 
 .popular-course-container p {
@@ -589,6 +709,37 @@
   left: -20%;
   animation: running-anim 15s infinite linear;
 }
+
+@media (max-width:1200px) {
+  .popular-course-div {
+    padding: 50px 10px;
+  }
+  .popular-course-container {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width:450px) {
+  .popular-course-container{
+    padding: 20px;
+  }
+
+  .cca, .com, .dom {
+    width: 100%;
+  }
+}
+
+@media (max-width:400px){
+  .cca, .com, .dom {
+    width: 100%;
+    height: max(100vw,370px);
+  }
+  .popular-course-container p {
+    font-size: 16px;
+  }
+
+}
+
 
 /* fifth section testimonial */
 
@@ -666,6 +817,7 @@
     color: white;
     font-weight: 800;
     margin-bottom: 5px;
+    letter-spacing: 2px;
   }
   .motivation-con h1 {
     color: white;
@@ -685,6 +837,19 @@
     z-index: -1;
   }
 
+  @media(max-width:800px) {
+    .motivation {
+      padding: 20% 20px;
+    }
+    .motivation-con {
+      min-width: 85vw;
+    }
+
+    .motivation-con h1 {
+      font-size: 30px;
+    }
+  }
+
   /* seventh section why choose us */
 
   .why-choose-us {
@@ -694,11 +859,9 @@
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    gap: 100px;
+    gap: 200px;
     padding: 20px;
   }
-
-
 
   .why-choose-us-left {
     width: fit-content;
@@ -707,7 +870,7 @@
   }
 
   .why-choose-us-left h1 {
-    font-size: max(2vw,20px);
+    font-size: max(2vw,30px);
     font-weight: bolder;
     font-family: "Cabin", sans-serif;
     margin-bottom: 50px;
@@ -747,14 +910,16 @@
     width: fit-content;
     height: fit-content;
     position: relative;
-
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .spinning-circle1 {
-    height: 31.9vw;
-    width: 31.9vw;
-    min-width: 500px;
-    min-height: 500px;
+    height: 31vw;
+    width: 31vw;
+    /* min-width: 500px;
+    min-height: 500px; */
     border: 2px solid #fc8e4f;
     position: absolute;
     border-radius: 58% 42% 34% 66% / 50% 43% 57% 50%  ;
@@ -762,10 +927,10 @@
     z-index: -1;
   }
   .spinning-circle2 {
-    height: 32vw;
-    width: 32vw;
-    min-width: 500px;
-    min-height: 500px;
+    height: 31vw;
+    width: 31vw;
+    /* min-width: 500px;
+    min-height: 500px; */
     border: 2px solid #fc8e4f;
     position: absolute;
     border-radius: 33% 67% 27% 73% / 52% 50% 50% 48%  ;
@@ -773,9 +938,9 @@
     z-index: -1;
   }
   #inside-circle {
-    width: 100%;
-    min-width: 500px;
-    min-height: 500px;
+    width: 31vw;
+    /* min-width: 500px;
+    min-height: 500px; */
     border-radius: 100% 55% 85% 69% / 64% 43% 97% 81% ;
     z-index: 2;
   }
@@ -793,7 +958,7 @@
     width: 40px;
     background-color: white;
     border-radius: 50%;
-
+    z-index: 2;
   }
 
   .play-button-anim1 {
@@ -803,6 +968,7 @@
     transform: translate(-50%, -50%) scale(1.4);
     border-radius: 50%;
     animation: wave-anim 2s infinite linear ;
+    z-index: 2;
   }
   .play-button-anim2 {
     position: absolute;
@@ -812,6 +978,7 @@
     border-radius: 50%;
     animation: wave-anim 2s infinite linear;
     animation-delay: 1s;
+    z-index: 2;
   }
 
 
@@ -829,6 +996,40 @@
 #shape26 {
   right: -30%;
   bottom: 10%;
+}
+
+
+@media (max-width:1150px) {
+  .why-choose-us {
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: center;
+    gap: 100px;
+    margin: 50px auto;
+  }
+  .why-choose-us-right {
+    width: 100%;
+  }
+  .spinning-circle1,.spinning-circle2, #inside-circle {
+    width: 70vw;
+    height: 70vw;
+    max-width: 500px;
+    max-height: 500px;
+  }
+
+}
+
+@media(max-width:500px){
+  .why-choose-us-left {
+    justify-content: center;
+    align-items: center;
+  }
+  .feature-img1, .feature-img2 {
+    flex-direction: column;
+  }
+  .why-choose-us-left h4, .why-choose-us-left h1 {
+    width: 100%;
+  }
 }
 
 
@@ -1007,8 +1208,6 @@
     margin-top: 20px;
   }
 }
-
-
 
 
 
