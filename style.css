@@ -21,6 +21,92 @@
     z-index: -1;
   }
 
+  /* sidebar */
+
+    .sidebar {
+      height: 100vh;
+      width: 100vw;
+      background-color: rgba(0, 0, 0, 0.737);
+      position: fixed;
+      z-index: 2;
+    }
+
+    .sidebar-header {
+      height: 100vh;
+      width: 300px;
+      background-color: rgb(246, 246, 246);
+      position: fixed;
+
+    }
+
+    .xmark {
+      height: 40px;
+      width: 40px;
+      border-radius: 50%;
+      background-color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      right: 15px;
+      top: 15px;
+    }
+
+    .sidebar img {
+      width: 170px;
+      padding: 20px 20px 10px;
+    }
+
+    .sidebar hr {
+      opacity: 0.3;
+    }
+
+    .sidebar ul {
+      padding: 20px;
+      list-style: none;
+    }
+    .sidebar ul li:not(:last-child),  .sidebar ul li a:not(:last-child) {
+      border-bottom: 1px solid rgba(0, 0, 0, 0.147);
+      padding-bottom: 10px;
+      margin-bottom: 10px;
+    }
+
+    ul li a {
+      text-decoration: none;
+      color: rgb(42, 44, 47);
+    }
+
+    .sidebar-sublist {
+      display: flex;
+      flex-direction: column;
+      margin-top: 20px;
+      margin-left: 20px;
+    }
+
+    .sidebar-hidden {
+      opacity: 0;
+      transition: 0.5s ease-in-out;
+    }
+
+
+    .sidebar-header-hidden {
+      transform: translateX(-400px);
+      opacity: 0;
+      transition: 0.5s ease-in-out;
+    }
+    .sidebar-header-show {
+      transform: translateX(0);
+      opacity: 0;
+      transition: 0.5s ease-in-out;
+    }
+  
+    .sidebar-none {
+      display: none;
+    }
+
+
+    
+
 /* header section */
 
 .header {
@@ -697,7 +783,7 @@
     z-index: 1;
 }
 .popular-course-div h1 {
-    font-size: max(2.7rem,20px);
+    font-size: max(2.2vw,25px);
     font-weight: bolder;
     font-family: "Cabin", sans-serif;
 }
@@ -850,6 +936,7 @@
     background-color: #ede5f2;
     background-image: linear-gradient(24deg, #ede5f2 0%, #ffecdb 50%, #f0e9f1 100%);
     width: 100vw;
+    min-height: 95vh;
     text-align: center;
     display: flex;
     align-items: center;
@@ -858,39 +945,96 @@
     overflow: hidden;
 }
 
-.testimonial-con {
-    width: fit-content;
-    display: flex;
-    gap: 10%;
+.testimonial-div h4 {
+  color: #525FE1;
+  font-weight: 800;
+  letter-spacing: 1px;
+  margin-top: 20px;
 }
+
+.testimonial-div h1 {
+  font-size: max(2.2vw,25px);
+  font-weight: bolder;
+  font-family: "Cabin", sans-serif;
+  margin-bottom: 50px;
+}
+
+.testimonial-con {
+  width: fit-content;
+  display: flex;
+  align-items: flex-end;
+  gap: 8%;
+  position: relative;
+  z-index: 1;
+  padding: 20px;
+}
+
+#testimonial-ad {
+  width: 28vw;
+  min-width: 400px;
+  height: fit-content;
+  object-fit: cover;
+}
+
+#shape3 {
+  left: -60px;
+  bottom: -60px;
+}
+
+#shape9-repeat {
+  right: -20%;
+  bottom: -5%;
+}
+
+#shape29 {
+  left: -20%;
+  top: -20%;
+}
+#shape30 {
+  right: -20%;
+  top: -20%;
+}
+
+iframe {
+  width: 100%;
+  overflow: hidden;
+  height: 100%;
+}
+
 
 .reviews {
-    height: 50vh;
-    width: 30vw;
-    background-color: teal;
+    height: 450px;
+    width: 600px;
     position: relative;
     overflow: hidden;
-    padding: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
 }
 
-.student {
-    width: 80%;
-    height: 80%;
-    background-color: yellow;
-    display: none;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+@media (max-width:1100px){
+  .testimonial-div{
+    padding-top: 30px;
+  }
+  .testimonial-con {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
-.active {
-    display: block;
+@media (max-width:650px){
+  iframe {
+    width: 70%;
   }
-
-.previous {
-    transform: translateX(-100%);
+  .reviews {
+    height: 410px;
+    scale: 0.7;
   }
+  #testimonial-ad {
+    min-width: 250px;
+  }
+}
 
   /* sixth section motivation */
 

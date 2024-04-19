@@ -1,25 +1,22 @@
-let currentIndex = 0;
-const slides = document.querySelectorAll('.student');
 
-function showSlide(index) {
-  slides.forEach((slide, i) => {
-    if (i === index) {
-      slide.classList.add('active');
-    } else if (i === (index - 1 + slides.length) % slides.length) {
-      slide.classList.add('previous');
-    } else {
-      slide.classList.remove('active', 'previous');
-    }
-  });
-}
+const xmark = document.querySelector('.xmark')
+const hamburger = document.querySelector(".hamburger");
+const sidebar = document.querySelector('.sidebar')
+const sidebar_header = document.querySelector('.sidebar-header');
 
-function nextSlide() {
-  currentIndex = (currentIndex + 1) % slides.length;
-  showSlide(currentIndex);
-}
+xmark.addEventListener("click" , ()=>{
+    sidebar.classList.add('sidebar-hidden')
+    sidebar_header.classList.add('sidebar-header-hidden')
+    setTimeout(()=>{
+        sidebar.classList.add('sidebar-none')
+    },500)
+})
 
-function startSlider() {
-  setInterval(nextSlide, 1000); // Change slide every 3 seconds
-}
+hamburger.addEventListener("click", ()=>{
+    sidebar.classList.remove('sidebar-hidden')
+    sidebar_header.classList.remove('sidebar-header-hidden')
+    sidebar.classList.remove('sidebar-none')
+})
 
-startSlider();
+
+
