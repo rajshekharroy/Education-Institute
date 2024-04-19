@@ -1013,6 +1013,8 @@ iframe {
     margin-top: 50px;
 }
 
+
+
 @media (max-width:1100px){
   .testimonial-div{
     padding-top: 30px;
@@ -1638,3 +1640,10 @@ iframe {
     }
 }
 
+/* all */
+
+@media(max-width:1200px){
+  .testimonial-div,.course-div, .why-choose-us{
+    min-height: fit-content;
+  }
+}
