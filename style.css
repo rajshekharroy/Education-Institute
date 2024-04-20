@@ -1167,8 +1167,6 @@ iframe {
   .spinning-circle1 {
     height: 31vw;
     width: 31vw;
-    /* min-width: 500px;
-    min-height: 500px; */
     border: 2px solid #fc8e4f;
     position: absolute;
     border-radius: 58% 42% 34% 66% / 50% 43% 57% 50%  ;
@@ -1178,8 +1176,6 @@ iframe {
   .spinning-circle2 {
     height: 31vw;
     width: 31vw;
-    /* min-width: 500px;
-    min-height: 500px; */
     border: 2px solid #fc8e4f;
     position: absolute;
     border-radius: 33% 67% 27% 73% / 52% 50% 50% 48%  ;
@@ -1188,8 +1184,6 @@ iframe {
   }
   #inside-circle {
     width: 31vw;
-    /* min-width: 500px;
-    min-height: 500px; */
     border-radius: 100% 55% 85% 69% / 64% 43% 97% 81% ;
     z-index: 2;
   }
@@ -1321,6 +1315,17 @@ iframe {
     background-color: #fff;
     padding: 35px;
     border-radius: 5px;
+    transform: translateY(100px);
+    opacity: 0;
+    transition: 1s ease;
+  }
+
+  
+
+  h1:not(.exclude),h4,.feature-img-div,button,p {
+    transform: translateY(50px);
+    opacity: 0;
+    transition: 1s ease;
   }
 
   .blog h1 {
@@ -1638,12 +1643,4 @@ iframe {
         opacity: 0.1;
         border: 1.5px solid white;
     }
-}
-
-/* all */
-
-@media(max-width:1200px){
-  .testimonial-div,.course-div, .why-choose-us{
-    min-height: fit-content;
-  }
 }
