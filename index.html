@@ -54,19 +54,22 @@
         <ul>
           <li>Home</li>
           <li>About</li>
-          <li>Courses
-            <div>
-            <a href="">IIITWB</a>
-            <a href="">NIELIT</a>
-            <a href="">GOVT. PROJECT</a>
-          </div>
-        </li>
+          <li class="choose-course">Courses<i class="fa-solid fa-angle-down"></i>
+            <div class="course-submenu">
+                <a class="under-hover" href="">IIITWB</a>
+                <a class="under-hover" href="">NIELIT</a>
+                <a class="under-hover under-hover1" href="">GOVT. PROJECT</a>
+              </div>
+          </li>
           <li>Placement</li>
           <li>Partnership</li>
           <li>Blog</li>
           <li>Gallery</li>
           <li>Contact Us</li>
         </ul>
+        <div class="hamburger">
+            <i class="fa-solid fa-bars" style="color: #525fe1;"></i>
+        </div>
       </div>
     </div>
 
@@ -139,7 +142,50 @@
           </div>
 
       </div>
-      <div class="down-arrow"><i class="fa-solid fa-angle-down" style="color: #525fe1;"></i></div>
+      <a href="#for-scroll-btn"><div class="down-arrow"><i class="fa-solid fa-angle-down" style="color: #525fe1;"></i></div></a>
+    </div>
+
+
+        <div class="gototop-section">
+            <div class="first-circle">
+              <div class="gototop">
+                <i class="fa-solid fa-angle-up gototop-arrow"></i>
+              </div>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                version="1.1"
+                width="44px"
+                height="44px"
+              >
+                <defs>
+                  <linearGradient id="GradientColor">
+                    <stop offset="0%" stop-color="#e91e63" />
+                    <stop offset="100%" stop-color="#673ab7" />
+                  </linearGradient>
+                </defs>
+                <circle
+                  id="svg-path"
+                  cx="22"
+                  cy="22"
+                  r="21"
+                  stroke-linecap="round"
+                  fill="url(#GradientColor)"
+                />
+              </svg>
+            </div>
+          </div>
+
+
+
+
+
+
+
+
+
+
+
+
     </div>
 
     
@@ -147,7 +193,7 @@
 
 
 
-    <div class="about-container">
+    <div id="for-scroll-btn" class="about-container">
             <div class="pictures">
                 <img id="first" src="about-image-01.jpg" alt="">
                 <img id="second" src="about-image-02.jpg" alt="">
