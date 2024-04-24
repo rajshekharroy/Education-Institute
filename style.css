@@ -108,7 +108,7 @@ ul li a {
   width: 100vw;
   background-color: #fff;
   position: fixed;
-  z-index: 2;
+  z-index: 3;
   height: fit-content;
   transform: translateY(-100px);
   transition: 0.5s ease;
